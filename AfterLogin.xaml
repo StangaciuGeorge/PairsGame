@@ -1,0 +1,102 @@
+﻿<Window x:Class="GeorgePairs.AfterLogin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeorgePairs"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+    AllowsTransparency="True"
+        Title="AfterLogin" Height="600" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize">
+    <Window.Resources>
+
+        <Color x:Key="Color1">#FFA8EDEA</Color>
+        <Style x:Key="SomeButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+
+    <Border BorderThickness="1" BorderBrush="#FFA8A8A8" 
+        HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+        <Grid x:Name="PrincipalGrid1">
+
+
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFED6E3" Offset="0.825"/>
+                    <GradientStop Color="{DynamicResource Color1}"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnExit1" Click="btnExit_Click" Height="16" Width="16" Margin="572,10,10,572" BorderThickness="0" RenderTransformOrigin="-1.75,0.562">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/exit.png"/>
+                </Button.Background>
+
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnMinimize1"  Click="MinimizeButton_Click" Height="16" Width="16" Margin="542,10,40,572" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/minimize.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" Click="btnLogout_Click" x:Name="btnLogout" Height="40" Width="40" Margin="10,548,548,10" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/logout.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" Click="btnLevel1_Click" x:Name="btnLevel1" Height="156" Width="173" Margin="31,326,394,116" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/level1.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" Click="btnLevel2_Click" x:Name="btnLevel2" Height="156" Width="173" Margin="215,326,210,116" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/level2.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" Click="btnLevel3_Click" x:Name="btnLevel3" Height="156" Width="173" Margin="395,326,30,116" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/level3.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <TextBlock x:Name="welcome" HorizontalAlignment="Left" Margin="287,0,0,522" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="49"><Run Text="Salut,"/><LineBreak/><Run/></TextBlock>
+            <Image Width="150" Height="150" Name="MyImage" Margin="41,27,407,421"/>
+            <TextBlock x:Name="playerName" HorizontalAlignment="Left" Margin="264,0,0,449" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="48" FontFamily="Segoe UI Semibold" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="68" Width="306">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Red" ShadowDepth="4" BlurRadius="30" RenderingBias="Quality"/>
+                </TextBlock.Effect><Run Text=""/><LineBreak/><Run/></TextBlock>
+            <TextBlock x:Name="welcome_Copy" HorizontalAlignment="Left" Margin="98,0,0,320" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="36" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="49" Width="448"><Run Text="Alege nivelul de dificultate:"/><LineBreak/><Run/><LineBreak/><Run/></TextBlock>
+        </Grid>
+    </Border>
+</Window>
