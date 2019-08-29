@@ -1,0 +1,75 @@
+﻿<Window x:Class="GeorgePairs.Help"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeorgePairs"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+    AllowsTransparency="True"
+        Title="Help" Height="200" Width="300" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize">
+    <Window.Resources>
+        <Color x:Key="Color1">#FFA8EDEA</Color>
+        <Style x:Key="SomeButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border BorderThickness="1" BorderBrush="#FFA8A8A8" 
+        HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+        <Grid x:Name="PrincipalGrid">
+
+
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFED6E3" Offset="0.825"/>
+                    <GradientStop Color="#FFA8EDEA"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnConfirm" Width="50" Height="50" Click="btnConfirm_Click" Margin="60,139,181,4">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/return.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnInfirm" Width="50" Height="50" Click="btnInfirm_Click" Margin="181,139,60,4">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/infirm.png"/>
+                </Button.Background>
+
+            </Button>
+
+
+
+            <TextBlock x:Name="tb_help" Margin="114,-7,96,152" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="32" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="48" Text="HELP">
+            </TextBlock>
+
+            <TextBlock x:Name="tb_revenire"  HorizontalAlignment="Left" Margin="55,0,0,55" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="12" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="17" Width="82" Text="Revino la joc">
+
+            </TextBlock>
+            <TextBlock x:Name="tb_confirmareExit"  HorizontalAlignment="Left" Margin="197,0,0,55" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="12" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="17" Width="34" Text="Exit">
+            </TextBlock>
+            <TextBlock x:Name="tb_numeProiect"  HorizontalAlignment="Left" Margin="50,0,0,138" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="12" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="17" Width="200" Text="Nume proiect: GEORGE'S PAIRS GAME"/>
+            <TextBlock x:Name="tb_numeStudent"  HorizontalAlignment="Left" Margin="29,0,0,119" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="12" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="17" Width="244" Text="Nume student: STANGACIU RAZVAN-GEORGE"/>
+            <TextBlock x:Name="tb_anStudiu"  HorizontalAlignment="Left" Margin="97,0,0,82" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="12" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="17" Width="98" Text="An studiu: ANUL II"/>
+            <TextBlock x:Name="tb_eMail"  HorizontalAlignment="Left" Margin="11,0,0,99" TextWrapping="Wrap" VerticalAlignment="Bottom" FontSize="12" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373" Height="17" Width="271" Text="e-Mail: STANGACIU.GEORGE.RAZVAN@GMAIL.COM"/>
+
+        </Grid>
+    </Border>
+</Window>

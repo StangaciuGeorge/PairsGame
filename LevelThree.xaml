@@ -1,0 +1,227 @@
+﻿<Window x:Class="GeorgePairs.LevelThree"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeorgePairs"
+ 
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+        
+    AllowsTransparency="True"
+        Title="LevelThree" Height="740" Width="900" ResizeMode="NoResize">
+    <Window.Resources>
+
+        <Color x:Key="Color1">#FFA8EDEA</Color>
+        <Style x:Key="SomeButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+                <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+           
+
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="PrincipalGrid" Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="212*"/>
+            <ColumnDefinition Width="13*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                <GradientStop Color="#FFFED6E3" Offset="0.825"/>
+                <GradientStop Color="{DynamicResource Color1}"/>
+            </LinearGradientBrush>
+
+        </Grid.Background>
+
+        <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnExit1" Click="btnExit_Click"  Height="16" Width="16" Margin="28,8,8,716" RenderTransformOrigin="1.031,-0.719" Grid.Column="1">
+
+            <Button.Background>
+                <ImageBrush ImageSource="imagini/exit.png"/>
+            </Button.Background>
+
+        </Button>
+        <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnMinimize1"  Click="MinimizeButton_Click" Width="16" Margin="2,8,34,716" RenderTransformOrigin="4.129,-10.507" Grid.Column="1">
+
+            <Button.Background>
+                <ImageBrush ImageSource="imagini/minimize.png"/>
+            </Button.Background>
+
+        </Button>
+        <Image x:Name="MyImage" Margin="768,42,0,618" Width="80" Height="80" />
+        <TextBlock x:Name="playerName" TextAlignment="Center" HorizontalAlignment="Left" Margin="720,127,0,577" TextWrapping="Wrap" FontSize="24" FontFamily="Segoe UI Light" RenderTransformOrigin="-0.217,0.373" Width="170" Grid.ColumnSpan="2">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Red" ShadowDepth="4" BlurRadius="30" RenderingBias="Quality"/>
+            </TextBlock.Effect><Run Text=""/><LineBreak/><Run/></TextBlock>
+
+
+
+
+
+        <TextBlock x:Name="wishGoodLuck" Text="Secunde pana la inceperea jocului: " HorizontalAlignment="Left" Margin="280,5,0,700" TextWrapping="Wrap" FontSize="19" FontFamily="Segoe UI Light" RenderTransformOrigin="-0.217,0.373" Width="288"/>
+
+        <TextBlock x:Name="countdown" HorizontalAlignment="Left" Margin="558,5,0,701" TextWrapping="Wrap" FontSize="19" FontFamily="Segoe UI Light" RenderTransformOrigin="-0.217,0.373" Width="30"><Run Text="15"/><LineBreak/><Run/></TextBlock>
+
+
+
+        <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnHelp" Click="btnHelp_Click" Height="40" Width="40" Margin="787,622,0,78" BorderThickness="0" RenderTransformOrigin="-2.031,0.5" HorizontalAlignment="Left">
+
+            <Button.Background>
+                <ImageBrush ImageSource="imagini/help.png"/>
+            </Button.Background>
+        </Button>
+
+        <Button Style="{StaticResource SomeButtonStyle}" Click="btnBackToLogin_Click" x:Name="btnBackToLogin" Width="40" Margin="787,432,21,268" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+            <Button.Background>
+                <ImageBrush ImageSource="imagini/back.png"/>
+            </Button.Background>
+        </Button>
+
+        <TextBlock x:Name="gameCountDownPlay" TextWrapping="Wrap" FontFamily="Segoe UI Semibold" Foreground="#FF71D1A4" FontWeight="Bold" Text="Secunde ramase:" Margin="760,240,36,482" Grid.ColumnSpan="2">
+            <TextBlock.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.015"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBlock.RenderTransform>
+        </TextBlock>
+        <TextBlock x:Name="gameCountDownBeforeStart" Margin="0,254,10,0" TextWrapping="Wrap" FontSize="28" FontFamily="Segoe UI Semibold" RenderTransformOrigin="-0.217,0.373" Width="51" Foreground="#FF71D1A4" FontWeight="Bold" VerticalAlignment="Top" HorizontalAlignment="Right" Height="39"><Run Text="110"/><LineBreak/><Run/></TextBlock>
+
+
+        <Grid x:Name="imageTableGrid" Margin="10,33,49,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="86*"/>
+                <ColumnDefinition Width="9*"/>
+            </Grid.ColumnDefinitions>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage1" Click="btnImage1_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="0,1,578,584" >
+                
+                <Image x:Name="image1" Source="imagini/peste1.png" Uid="1"/>
+
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage2" Click="btnImage2_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="0,117,578,468">
+                <Image x:Name="image2" Source="imagini/peste2.png" Uid="2"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage3" Click="btnImage3_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="0,232,578,353">
+                <Image x:Name="image3" Source="imagini/peste3.png" Uid="3"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage4" Click="btnImage4_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="0,347,578,238">
+                <Image x:Name="image4" Source="imagini/peste4.png" Uid="4"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage5" Click="btnImage5_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="0,462,578,123">
+                <Image x:Name="image5" Source="imagini/peste5.png" Uid="5"/>
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage6" Click="btnImage6_Click"  PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="0,577,578,8">
+                <Image x:Name="image6" Source="imagini/peste6.png" Uid="6"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage7" Click="btnImage7_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="115,1,463,584">
+                <Image x:Name="image7" Source="imagini/peste7.png" Uid="7"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage8" Click="btnImage8_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="115,117,463,468">
+                <Image x:Name="image8" Source="imagini/peste8.png" Uid="8"/>
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage9" Click="btnImage9_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="115,232,463,353">
+                <Image x:Name="image9" Source="imagini/peste9.png" Uid="9"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage10" Click="btnImage10_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="115,347,463,238">
+                <Image x:Name="image10" Source="imagini/peste10.png" Uid="10"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage11" Click="btnImage11_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="115,462,463,123">
+                <Image x:Name="image11" Source="imagini/peste11.png" Uid="11"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage12" Click="btnImage12_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="115,577,463,8">
+                <Image x:Name="image12" Source="imagini/peste12.png" Uid="12"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage13" Click="btnImage13_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="232,1,348,584">
+                <Image x:Name="image13" Source="imagini/peste13.png" Uid="13"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage14" Click="btnImage14_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="232,117,348,468">
+                <Image x:Name="image14" Source="imagini/peste14.png" Uid="14"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage15" Click="btnImage15_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="232,232,348,353">
+                <Image x:Name="image15" Source="imagini/peste15.png" Uid="15"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage16" Click="btnImage16_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="232,347,348,238">
+                <Image x:Name="image16" Source="imagini/peste16.png" Uid="16"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage17" Click="btnImage17_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="232,462,348,123">
+                <Image x:Name="image17" Source="imagini/peste17.png" Uid="17"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage18" Click="btnImage18_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="232,577,348,8">
+                <Image x:Name="image18" Source="imagini/peste18.png" Uid="18"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage19" Click="btnImage19_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="349,1,233,584">
+                <Image x:Name="image19" Source="imagini/peste1.png" Uid="1"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage20" Click="btnImage20_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="349,117,233,468">
+                <Image x:Name="image20" Source="imagini/peste2.png" Uid="2"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage21" Click="btnImage21_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="349,232,233,353">
+                <Image x:Name="image21" Source="imagini/peste3.png" Uid="3"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage22" Click="btnImage22_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="349,347,233,238">
+                <Image x:Name="image22" Source="imagini/peste4.png" Uid="4"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage23" Click="btnImage23_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="349,462,233,123">
+                <Image x:Name="image23" Source="imagini/peste5.png" Uid="5"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage24" Click="btnImage24_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="349,577,233,8">
+                <Image x:Name="image24" Source="imagini/peste6.png" Uid="6"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage25" Click="btnImage25_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="465,1,118,584">
+                <Image x:Name="image25" Source="imagini/peste7.png" Uid="7"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage26" Click="btnImage26_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="465,117,118,468">
+                <Image x:Name="image26" Source="imagini/peste8.png" Uid="8"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage27" Click="btnImage27_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="465,232,118,353">
+                <Image x:Name="image27" Source="imagini/peste9.png" Uid="9"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage28" Click="btnImage28_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="465,347,118,238">
+                <Image x:Name="image28" Source="imagini/peste10.png" Uid="10"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage29" Click="btnImage29_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="465,462,118,123">
+                <Image x:Name="image29" Source="imagini/peste11.png" Uid="11"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage30" Click="btnImage30_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="465,577,118,8">
+                <Image x:Name="image30" Source="imagini/peste12.png" Uid="12"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage31" Click="btnImage31_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="580,1,3,584">
+                <Image x:Name="image31" Source="imagini/peste13.png" Uid="13"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage32" Click="btnImage32_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="580,117,3,468">
+                <Image x:Name="image32" Source="imagini/peste14.png" Uid="14"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage33" Click="btnImage33_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="580,232,3,353">
+                <Image x:Name="image33" Source="imagini/peste15.png" Uid="15"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage34" Click="btnImage34_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="580,347,3,238">
+                <Image x:Name="image34" Source="imagini/peste16.png" Uid="16"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage35" Click="btnImage35_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="580,462,3,123">
+                <Image x:Name="image35" Source="imagini/peste17.png" Uid="17"/>
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnImage36" Click="btnImage36_Click" PreviewMouseDown="Button_PreviewMouseDown" Height="110" Width="110" Margin="580,577,3,8">
+                <Image x:Name="image36" Source="imagini/peste18.png" Uid="18"/>
+            </Button>
+        </Grid>
+
+    </Grid>
+</Window>

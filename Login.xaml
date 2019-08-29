@@ -1,0 +1,87 @@
+﻿<Window x:Class="GeorgePairs.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GeorgePairs"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
+    AllowsTransparency="True"
+        Title="Login" Height="600" Width="600" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize">
+    <Window.Resources>
+        <Color x:Key="Color1">#FFA8EDEA</Color>
+        <Style x:Key="SomeButtonStyle" TargetType="Button">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <Border BorderThickness="1" BorderBrush="#FFA8A8A8" 
+        HorizontalAlignment="Center" VerticalAlignment="Center" >
+
+        <Grid x:Name="PrincipalGrid1">
+
+
+
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                    <GradientStop Color="#FFFED6E3" Offset="0.825"/>
+                    <GradientStop Color="{DynamicResource Color1}"/>
+                </LinearGradientBrush>
+
+            </Grid.Background>
+
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnExit1" Click="btnExit_Click" Height="16" Width="16" Margin="572,10,10,572" BorderThickness="0" RenderTransformOrigin="-1.75,0.562">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/exit.png"/>
+                </Button.Background>
+
+            </Button>
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnMinimize1"  Click="MinimizeButton_Click" Height="16" Width="16" Margin="542,10,40,572" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/minimize.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" x:Name="btnApproveLogin" Click="btnApproveLogin_Click" Margin="340,334,64,80" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/game.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <Button Style="{StaticResource SomeButtonStyle}" Click="btnToMain1_Click" x:Name="btnBack1" Height="40" Width="40" Margin="10,548,548,10" BorderThickness="0" RenderTransformOrigin="-2.031,0.5">
+
+                <Button.Background>
+                    <ImageBrush ImageSource="imagini/back.png"/>
+                </Button.Background>
+
+            </Button>
+
+            <TextBlock x:Name="tbLogin" HorizontalAlignment="Left" Margin="202,0,0,508" TextWrapping="Wrap" Text="Logheaza-te" VerticalAlignment="Bottom" FontSize="36" FontFamily="Segoe UI Light" FontWeight="Bold" FontStyle="Italic" RenderTransformOrigin="-0.217,0.373">
+                <TextBlock.Effect>
+                    <DropShadowEffect Color="Red" ShadowDepth="4" BlurRadius="30" RenderingBias="Quality"/>
+                </TextBlock.Effect>
+            </TextBlock>
+
+            <TextBox x:Name="TbxUsernameLogin" HorizontalAlignment="Left" Height="52" Margin="215,142,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="343" FontSize="20" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold"/>
+            <TextBlock x:Name="tbUsernameLogin" HorizontalAlignment="Left" Margin="42,149,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Height="37"><Run Text="Nume Utilizator"/><LineBreak/><Run/></TextBlock>
+            <TextBlock x:Name="tbPassLogin" HorizontalAlignment="Left" Margin="42,224,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="24" FontFamily="Segoe UI Light" Height="37" Text="Parola"/>
+            <PasswordBox x:Name="tbxPasswordLogin" HorizontalAlignment="Left" Margin="215,218,0,0" VerticalAlignment="Top" Width="343" Height="52" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Segoe UI Semibold" FontSize="20"/>
+            <Label x:Name="LabelErrorLogin" TextBlock.Foreground="Red"  HorizontalAlignment="Left" Margin="211,282,0,0" VerticalAlignment="Top" RenderTransformOrigin="-3.132,-0.077" Width="319" FontFamily="Segoe UI Light" FontSize="20"/>
+        </Grid>
+    </Border>
+</Window>
