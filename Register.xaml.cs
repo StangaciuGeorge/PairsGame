@@ -16,7 +16,7 @@ using System.Data.SqlClient;
 
 namespace GeorgePairs
 {
-   
+   //Acesta este un test pt reposityoru
     public partial class Register : Window
     {
         
