@@ -20,7 +20,7 @@ namespace GeorgePairs
     public partial class Register : Window
     {
         
-        //this is added for a test
+        
 
         public Register()
         {
